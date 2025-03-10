@@ -1,0 +1,98 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/10 15:04:57 by mkulikov          #+#    #+#             */
+/*   Updated: 2025/03/10 17:41:40 by mkulikov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+
+bool ClapTrap::_isEnoughPoints(void)
+{
+	if (_energyPoint < 1)
+	{
+		std::cout << "ClapTrap " << _name
+					<< "has no energy point" << std::endl;
+		return false;
+	}
+	if (_hitPoint < 1)
+	{
+		std::cout << "ClapTrap " << _name
+					<< "has no hit point" << std::endl;
+		return false;
+	}
+	return true;
+}
+
+ClapTrap::ClapTrap(const std::string &name)
+	: _hitPoint(10)
+	, _energyPoint(10)
+	, _attackDamage(0)
+	, _name(name)
+{
+	std::cout << "ClapTrap " << name << " default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other)
+		: _hitPoint(other._hitPoint)
+		, _energyPoint(other._energyPoint)
+		, _attackDamage(other._attackDamage)
+		, _name(other._name)
+{
+	std::cout << "ClapTrap " << _name << " copy constructor called" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+	if (this != &other)
+	{
+		this->_hitPoint = other._hitPoint;
+		this->_energyPoint = other._energyPoint;
+		this->_attackDamage = other._attackDamage;
+		this->_name = other._name;
+	}
+	std::cout << "ClapTrap " << other._name << " assignment operator called" << std::endl;
+	return *this;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
+}
+
+void ClapTrap::attack(const std::string &target)
+{
+	if (!_isEnoughPoints())
+		return ;
+	std::cout << "ClapTrap " << _name
+	<< " attacks " << target
+	<< ", causing " << _hitPoint
+	<< " points of damage!" << std::endl;
+}
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+	if (_energyPoint < 1)
+	{
+		std::cout << "ClapTrap " << _name << " has no energy point!" << std::endl;
+	}
+	std::cout << "ClapTrap " << _name
+				 << " takes " << amount
+				 << " points of damage!" << std::endl;
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+	if (!_isEnoughPoints())
+		return ;
+	std::cout << "ClapTrap " << _name
+	<< " repairs itself, it gains  " << amount
+	<< " hit points" << std::endl;
+	_hitPoint += amount;
+	_energyPoint -= 1;
+}
