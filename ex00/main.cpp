@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 17:05:07 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/10 17:43:22 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:16:18 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ int main(void)
 	ClapTrap tom("Tom");
 	ClapTrap clone(tom);
 	ClapTrap clone2("clone 2");
-
-	chuck.attack("Tom");
-	tom.takeDamage(10);
-	
 	clone2 = chuck;
+
+	tom.attack("Chuck");
+	tom.takeDamage(5);
+	tom.beRepaired(3);
+	tom.takeDamage(10);
+	tom.attack("Chuck");
+	tom.beRepaired(10);
 	return 0;
 }
