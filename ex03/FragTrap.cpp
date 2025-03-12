@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:45:04 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 16:48:26 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/12 17:31:40 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,14 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap "
 				<< getName()
 				<< " destructor called"
+				<< std::endl;
+}
+
+void FragTrap::attack(const std::string &target)
+{
+	std::cout << "ScavTrap "
+				<< getName()
+				<< " is now in Gate keeper mode"
 				<< std::endl;
 }
 

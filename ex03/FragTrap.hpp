@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:45:11 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 16:34:49 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/12 17:27:39 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	FragTrap(const FragTrap &other);
 	FragTrap &operator=(const FragTrap &other);
 	~FragTrap();
+	void attack(const std::string& target);
 	void highFivesGuys(void);
 };
 
