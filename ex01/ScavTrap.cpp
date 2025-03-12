@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:18:53 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 15:33:55 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/12 16:12:08 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ ScavTrap::ScavTrap()
 ScavTrap::ScavTrap(const ScavTrap &other)
 {
 	setAttackDamage(other.getAttackDamage());
+	setEnergypoint(other.getEnergyPoint());
+	setHitpoint(other.getHitPoint());
+	std::string copyName = other.getName();
+	setName(copyName);
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
