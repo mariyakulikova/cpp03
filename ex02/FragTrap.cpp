@@ -1,42 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 10:18:53 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 16:35:53 by mkulikov         ###   ########.fr       */
+/*   Created: 2025/03/12 15:45:04 by mkulikov          #+#    #+#             */
+/*   Updated: 2025/03/12 16:48:26 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
-	setAttackDamage(20);
-	setEnergypoint(50);
+	setAttackDamage(30);
+	setEnergypoint(100);
 	setHitpoint(100);
-	std::cout << "ScavTrap "
+	std::cout << "FragTrap "
 				<< getName()
 				<< " default constructor called"
 				<< std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
+FragTrap::FragTrap(const std::string &str) : ClapTrap(str)
+{
+	setAttackDamage(30);
+	setEnergypoint(100);
+	setHitpoint(100);
+	std::cout << "FragTrap "
+				<< getName()
+				<< " default constructor called"
+				<< std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &other)
 {
 	setAttackDamage(other.getAttackDamage());
 	setEnergypoint(other.getEnergyPoint());
 	setHitpoint(other.getHitPoint());
 	std::string copyName = other.getName();
 	setName(copyName);
-	std::cout << "ScavTrap "
+	std::cout << "FragTrap "
 				<< getName()
 				<< " copy constructor called"
 				<< std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+FragTrap &FragTrap::operator=(const FragTrap &other)
 {
 	if (this != &other)
 	{
@@ -46,55 +57,25 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 		setAttackDamage(other.getAttackDamage());
 		setEnergypoint(other.getEnergyPoint());
 	}
-	std::cout << "ScavTrap "
+	std::cout << "FragTrap "
 				<< getName()
 				<< " copy assignment constructor called"
 				<< std::endl;
 	return *this;
 }
 
-ScavTrap::ScavTrap(const std::string &name)
-	: ClapTrap(name)
+FragTrap::~FragTrap()
 {
-	setAttackDamage(20);
-	setEnergypoint(50);
-	setHitpoint(100);
-	std::cout << "ScavTrap "
-				<< getName()
-				<< " param constructor called"
-				<< std::endl;
-}
-
-ScavTrap::~ScavTrap()
-{
-	std::cout << "ScavTrap "
+	std::cout << "FragTrap "
 				<< getName()
 				<< " destructor called"
 				<< std::endl;
 }
 
-void ScavTrap::attack(const std::string &target)
+void FragTrap::highFivesGuys(void)
 {
-	if (getHitPoint() == 0 || getEnergyPoint() == 0)
-	{
-		std::cout << "ScavTrap "
-					<< getName()
-					<< " has no energy or hit points"
-					<< std::endl;
-		return ;
-	}
-	unsigned int EP = getEnergyPoint() - 1;
-	setEnergypoint(EP);
-	std::cout << "ScavTrap " << getName()
-				<< " attacks " << target
-				<< ", causing " << getAttackDamage()
-				<< " points of damage!" << std::endl;
-}
-
-void ScavTrap::guardGate()
-{
-	std::cout << "ScavTrap "
+	std::cout << "FragTrap "
 				<< getName()
-				<< " is now in Gate keeper mode"
+				<< " posotive high-five request"
 				<< std::endl;
 }
