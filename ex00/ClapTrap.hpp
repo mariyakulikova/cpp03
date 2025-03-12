@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:04:10 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/10 17:17:25 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:28:20 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 	std::string _name;
 	bool _isEnoughPoints(void);
 public:
+	ClapTrap();
 	ClapTrap(const std::string& name);
 	ClapTrap(const ClapTrap &other);
 	ClapTrap &operator=(const ClapTrap &other);

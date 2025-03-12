@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:04:57 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 10:15:48 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:29:02 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,22 @@ bool ClapTrap::_isEnoughPoints(void)
 	return true;
 }
 
+ClapTrap::ClapTrap()
+	: _hitPoint(10)
+	, _energyPoint(10)
+	, _attackDamage(0)
+	, _name("noname")
+{
+	std::cout << "ClapTrap " << _name << " default constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(const std::string &name)
 	: _hitPoint(10)
 	, _energyPoint(10)
 	, _attackDamage(0)
 	, _name(name)
 {
-	std::cout << "ClapTrap " << name << " default constructor called" << std::endl;
+	std::cout << "ClapTrap " << _name << " default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
