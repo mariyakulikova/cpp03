@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:18:46 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 15:32:22 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:03:37 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,5 @@ public:
 	void attack(const std::string& target);
 	void guardGate();
 };
-
-
-
-
 
 #endif
