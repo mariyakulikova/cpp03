@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:04:57 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 11:57:37 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 09:53:39 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoint == 0)
 	{
-		std::cout << "ClapTrap " << _name << " has no hit point!" << std::endl;
+		std::cout << "ClapTrap " << _name << " is already dead!" << std::endl;
 	}
 	_hitPoint = amount >= _hitPoint ? 0 : _hitPoint - amount;
 	std::cout << "ClapTrap " << _name
