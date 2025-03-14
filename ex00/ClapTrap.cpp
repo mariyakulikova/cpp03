@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:04:57 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 10:01:15 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:45:35 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
 	if (this != &other)
 	{
-		this->_hitPoint = other._hitPoint;
-		this->_energyPoint = other._energyPoint;
-		this->_attackDamage = other._attackDamage;
-		this->_name = other._name;
+		_hitPoint = other._hitPoint;
+		_energyPoint = other._energyPoint;
+		_attackDamage = other._attackDamage;
+		_name = other._name;
 	}
 	std::cout << "ClapTrap "
 				<< _name
