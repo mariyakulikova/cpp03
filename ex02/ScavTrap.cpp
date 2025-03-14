@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:18:53 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 10:30:17 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 11:08:44 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ ScavTrap::ScavTrap(const std::string &name)
 	_hitPoint = 100;
 	std::cout << "ScavTrap "
 				<< _name
-				<< " param constructor called"
+				<< " parameterized constructor called"
 				<< std::endl;
 }
 

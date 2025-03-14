@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:04:57 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 10:45:52 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 11:08:50 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(const std::string &name)
 {
 	std::cout << "ClapTrap "
 				<< _name
-				<< " default constructor called"
+				<< " parameterized constructor called"
 				<< std::endl;
 }
 

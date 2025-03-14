@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:45:04 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 10:39:54 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 11:08:57 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ FragTrap::FragTrap(const std::string &str) : ClapTrap(str)
 	_hitPoint = 100;
 	std::cout << "FragTrap "
 				<<_name
-				<< " default constructor called"
+				<< " parameterized constructor called"
 				<< std::endl;
 }
 

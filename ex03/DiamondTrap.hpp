@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:55:57 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 16:58:49 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 11:21:47 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,13 @@ class DiamondTrap : public FragTrap, public ScavTrap
 private:
 	std::string _name;
 public:
-	DiamondTrap(/* args */);
+	DiamondTrap();
+	DiamondTrap(const std::string &str);
+	DiamondTrap(const DiamondTrap &other);
+	DiamondTrap &operator=(const DiamondTrap &other);
 	~DiamondTrap();
+	void attack(const std::string& target);
+	void whoAmI();
 };
-
-DiamondTrap::DiamondTrap(/* args */)
-{
-}
-
-DiamondTrap::~DiamondTrap()
-{
-}
-
 
 #endif
