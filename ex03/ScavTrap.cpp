@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:18:53 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 16:37:49 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:30:17 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,23 @@
 
 ScavTrap::ScavTrap()
 {
-	setAttackDamage(20);
-	setEnergypoint(50);
-	setHitpoint(100);
+	_attackDamage = 20;
+	_energyPoint = 50;
+	_hitPoint = 100;
 	std::cout << "ScavTrap "
-				<< getName()
+				<< _name
 				<< " default constructor called"
 				<< std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other)
 {
-	setAttackDamage(other.getAttackDamage());
-	setEnergypoint(other.getEnergyPoint());
-	setHitpoint(other.getHitPoint());
-	std::string copyName = other.getName();
-	setName(copyName);
+	_attackDamage = other._attackDamage;
+	_energyPoint = other._energyPoint;
+	_hitPoint = other._hitPoint;
+	_name = other._name;
 	std::cout << "ScavTrap "
-				<< getName()
+				<< _name
 				<< " copy constructor called"
 				<< std::endl;
 }
@@ -40,14 +39,13 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	if (this != &other)
 	{
-		std::string copyName = other.getName();
-		setName(copyName);
-		setHitpoint(other.getHitPoint());
-		setAttackDamage(other.getAttackDamage());
-		setEnergypoint(other.getEnergyPoint());
+		_attackDamage = other._attackDamage;
+		_energyPoint = other._energyPoint;
+		_hitPoint = other._hitPoint;
+		_name = other._name;
 	}
 	std::cout << "ScavTrap "
-				<< getName()
+				<< _name
 				<< " copy assignment constructor called"
 				<< std::endl;
 	return *this;
@@ -56,11 +54,11 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 ScavTrap::ScavTrap(const std::string &name)
 	: ClapTrap(name)
 {
-	setAttackDamage(20);
-	setEnergypoint(50);
-	setHitpoint(100);
+	_attackDamage = 20;
+	_energyPoint = 50;
+	_hitPoint = 100;
 	std::cout << "ScavTrap "
-				<< getName()
+				<< _name
 				<< " param constructor called"
 				<< std::endl;
 }
@@ -68,33 +66,32 @@ ScavTrap::ScavTrap(const std::string &name)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap "
-				<< getName()
+				<< _name
 				<< " destructor called"
 				<< std::endl;
 }
 
 void ScavTrap::attack(const std::string &target)
 {
-	if (getHitPoint() == 0 || getEnergyPoint() == 0)
+	if (_hitPoint == 0 || _energyPoint == 0)
 	{
 		std::cout << "ScavTrap "
-					<< getName()
+					<< _name
 					<< " has no energy or hit points"
 					<< std::endl;
 		return ;
 	}
-	unsigned int EP = getEnergyPoint() - 1;
-	setEnergypoint(EP);
-	std::cout << "ScavTrap " << getName()
+	_energyPoint -= 1;
+	std::cout << "ScavTrap " << _name
 				<< " attacks " << target
-				<< ", causing " << getAttackDamage()
+				<< ", causing " << _attackDamage
 				<< " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap "
-				<< getName()
+				<< _name
 				<< " is now in Gate keeper mode"
 				<< std::endl;
 }
