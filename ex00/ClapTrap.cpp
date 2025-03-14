@@ -6,23 +6,11 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:04:57 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 09:53:39 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:01:15 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-bool ClapTrap::_isEnoughPoints(void)
-{
-	if (_energyPoint == 0 || _hitPoint == 0)
-	{
-		std::cout << "ClapTrap " << _name
-					<< " has no energy or hit points"
-					<< std::endl;
-		return false;
-	}
-	return true;
-}
 
 ClapTrap::ClapTrap()
 	: _hitPoint(10)
@@ -86,8 +74,13 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string &target)
 {
-	if (!_isEnoughPoints())
+	if (_energyPoint == 0 || _hitPoint == 0)
+	{
+		std::cout << "ClapTrap " << _name
+					<< " has no energy or hit points"
+					<< std::endl;
 		return ;
+	}
 	_energyPoint -= 1;
 	std::cout << "ClapTrap " << _name
 	<< " attacks " << target
@@ -100,6 +93,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (_hitPoint == 0)
 	{
 		std::cout << "ClapTrap " << _name << " is already dead!" << std::endl;
+		return ;
 	}
 	_hitPoint = amount >= _hitPoint ? 0 : _hitPoint - amount;
 	std::cout << "ClapTrap " << _name
@@ -109,8 +103,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (!_isEnoughPoints())
+	if (_energyPoint == 0 || _hitPoint == 0)
+	{
+		std::cout << "ClapTrap " << _name
+					<< " has no energy or hit points"
+					<< std::endl;
 		return ;
+	}
 	std::cout << "ClapTrap " << _name
 	<< " repairs itself, it gains  " << amount
 	<< " hit points" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:04:10 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/12 10:28:20 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:01:06 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ private:
 	unsigned int _energyPoint;
 	unsigned int _attackDamage;
 	std::string _name;
-	bool _isEnoughPoints(void);
 public:
 	ClapTrap();
 	ClapTrap(const std::string& name);
