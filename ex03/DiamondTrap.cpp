@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 10:48:31 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 11:29:58 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/17 17:24:59 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 DiamondTrap::DiamondTrap()
 {
-	_hitPoint = FragTrap::_hitPoint;
-	_energyPoint = ScavTrap::_energyPoint;
-	_attackDamage = FragTrap::_attackDamage;
+	ScavTrap temp;
+	_energyPoint = temp.getEnergyPoints();
 	std::cout << "DiamondTrap "
 	<< _name
 	<< " default constructor called"
 	<< std::endl;
+
 }
 
 DiamondTrap::DiamondTrap(const std::string &str)
 	: ClapTrap(str + "_clap_name")
 	, _name(str)
 {
-	_hitPoint = FragTrap::_hitPoint;
-	_energyPoint = ScavTrap::_energyPoint;
-	_attackDamage = FragTrap::_attackDamage;
+	ScavTrap temp;
+	_energyPoint = temp.getEnergyPoints();
 	std::cout << "DiamondTrap "
 	<< _name
 	<< " parameterized constructor called"
 	<< std::endl;
+	std::cout << "_hitPoint = " << _hitPoint
+				<< " _energyPoint = " << _energyPoint
+				<< " _attackDamage = " << _attackDamage
+				<< std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)

@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:18:53 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 11:09:08 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/17 17:01:47 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,19 @@ void ScavTrap::guardGate()
 				<< _name
 				<< " is now in Gate keeper mode"
 				<< std::endl;
+}
+
+int ScavTrap::getHitPoints() const
+{
+	return _hitPoint;
+}
+
+int ScavTrap::getEnergyPoints() const
+{
+	return _energyPoint;
+}
+
+int ScavTrap::getAttackDamage() const
+{
+	return _attackDamage;
 }

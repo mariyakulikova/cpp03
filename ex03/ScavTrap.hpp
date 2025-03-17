@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:18:46 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/14 10:58:16 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/17 17:01:28 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ public:
 	~ScavTrap();
 	void attack(const std::string& target);
 	void guardGate();
+	int getHitPoints() const;
+	int getEnergyPoints() const;
+	int getAttackDamage() const;
 };
 
 #endif
